@@ -1,0 +1,78 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{tabu}
+\usepackage[title,titletoc,toc]{appendix}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\graphicspath{ {images/} }
+
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\lhead{Bellisimo}
+\chead{}
+\rhead{\bfseries Software Requirements Specification}
+\lfoot{COS731 Software Engineering}
+\rfoot{Page \thepage}
+\cfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\frenchspacing
+
+\title{\includegraphics[width=12cm]{Eeufeeslogo.jpg} \\       
+      \bfseries Bellisimo \\
+       \vspace{1.0cm}
+       Software Requirements Specification \\ 
+       \vspace{0.5cm}
+       }
+
+\date{\today} 
+\author{Elizabeth (EF) Bode			14310156}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{roman}
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+
+\newpage
+\pagenumbering{arabic}
+
+\section{Background}
+Bellisimo is a company aimed at providing an online platform for customers to browse clothing as well as food catalogues provided by the business located in Hatfield. Information about specials and promotions will be published on the online platform.
+
+\section{Vision}
+The core of the system will be catalogues of items and their prices. Since Bellisimo is involved in clothing and food, the catalogues will have to ensure that these lines are well maintained. Sales and specials in each line will have to be accounted for and managed.
+
+\section{Assumptions}
+\begin{itemize}
+	\item An admin user has to be preloaded onto the system, the system doesn’t cater for adding admin users to it
+\end{itemize}
+
+\section{Constraints}
+\begin{itemize}
+	\item The system must be implemented using the technologies stated in the provided specification
+	\item Only open source software should be used for the system
+	\item The system must be complete by the 6th September
+\end{itemize}
+
+
+\newpage
+\clearpage
+
+
+
+\end{document}
