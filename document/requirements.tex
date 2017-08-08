@@ -95,6 +95,73 @@ The micro services implementation will consist on n spring boot applications whe
 	\caption{System components diagram}
 \end{figure}
 
+\subsubsection{Non-Functional Requirements}
+\begin{itemize}
+	\item  \textbf{Performance} \\\\
+	System performance can be defined as the amount of work the system can perform in a measured time interval. The time interval is normally measured in seconds, where the amount of work can be defined as the throughput, latency or data transmission time.\\\\
+	 \underline{Requirements:}
+	 \begin{itemize}
+		\item Function calls must be timed and benchmarked and this data should be logged
+		\item Network responses should be cached on server side to lighten the load on database as well as decreasing the round trip time of request - response
+		\item The system should never hang because of poor system performance, it should only be a result of a poor network connection
+	\end{itemize}
+	\item  \textbf{Integrability} \\\\
+	Integrability refers to a system’s ability to seamlessly integrate new modules into the existing system regardless of the varying technologies they were implemented in.\\\\
+	 \underline{Requirements:}
+	 \begin{itemize}
+		\item The system should allow technology neutral importing and exporting of data
+		\item The back-end system should integrate with a desktop web client
+		\item The system should be able to integrate with different back-end authentication services
+		\item Modules should be able to be swapped in and out regardless of the technologies they are implemented in
+	\end{itemize}
+	\item  \textbf{Maintainability} \\\\
+	The system is to be designed in such a way that it is easily updated, modified or extended by the client in the future. In order to achieve these requirements, design patterns and best practices will be used to ensure uniformity and modularity across the system.\\\\
+	 \underline{Requirements:}
+	 \begin{itemize}
+		\item All code should be documented in the applicable language documentation framework, such as JavaDocs for a Java based system, DOxygen for a C/C++ based system, etc. 
+		\item A specified coding style should be adhered to so as to enforce readable code that is consistent and easier to maintain
+		\item System should be separated in distinct, concise and independent modules relating to separate concerns, to allow for easier maintenance
+	\end{itemize}
+	\item  \textbf{Scalability} \\\\
+	Scalability refers to the application in question’s ability to handle an above normal workload for extended time periods and the mechanisms employed to facilitate this.\\\\
+	 \underline{Requirements:}
+	 \begin{itemize}
+		\item The system should be able to handle increased workloads towards the end of the month when people are paid
+		\item The system should be able to facilitate 100 concurrent user sessions at any time
+	\end{itemize}
+	\item  \textbf{Reliability} \\\\
+	System reliability refers to the probability of the system performing an operation to a satisfactory standard at or for a specified time in a specified environment.\\\\
+	 \underline{Requirements:}
+	 \begin{itemize}
+		\item The system should never go down as it could potentially cause Bellisimo to lose several customers
+		\item The system should have the ability to swap out modules without causing system downtime
+	\end{itemize}
+	\item  \textbf{Security} \\\\
+	Security comprises of data security authentication and authroization. Authentication refers the system’s ability to identify a user to be who they are. Authorization refers to the system’s ability to provide the user in question with access to only the system functions that they have the authority to perform. Data security 			refers to data only being accessible through authorized channels.\\\\
+	 \underline{Requirements:}
+	 \begin{itemize}
+		\item System should be resistant to SQL injections
+		\item Password hosting with a unique salt for each user should be used
+		\item A key derivation function should be used with passwords
+		\item Database access must require authentication
+	\end{itemize}
+	\item  \textbf{Accessibility} \\\\
+	System accessibility refers to the system being accessible to whomever requires it when they require it.\\\\
+	 \underline{Requirements:}
+	 \begin{itemize}
+		\item The system should have a web interface that’s hosted on a server so customers can access it wherever whenever
+		\item The system won’t take into account any individual with any type of disability hindering their interaction with a web-based application
+	\end{itemize}
+	\item  \textbf{Flexibility} \\\\
+	Flexibility refers to the system’s ability to continue to function regardless of internal swapping of components. Furthermore, it refers to the system’s ability to be able to adapt to changing constraints.\\\\
+	 \underline{Requirements:}
+	 \begin{itemize}
+		\item The system should be decoupled from the database technology it uses and allow the client to select and change the database it uses in future
+		\item Authentication mechanisms used should be decoupled from the system, allowing them to be interchangeable
+		\item Modules should be decoupled from one another, allowing the system to be extensible without a break in service which is achieved by integrating new modules and swapping out existing ones
+	\end{itemize}
+\end{itemize}
+
 \subsubsection{Architectural Patterns}
 \begin{itemize}
 	\item \textbf {Authentication Enforcer Pattern} \\\\
