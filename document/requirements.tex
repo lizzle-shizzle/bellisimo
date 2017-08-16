@@ -230,6 +230,231 @@ The micro services implementation will consist on n spring boot applications whe
 	\end{itemize}
 \end{itemize}
 
+\section{System Modules}
+\subsection{Admin Subsystem}
+This module is responsible for handling all the functions that could be performed by the administrator.
+\includegraphics[width=12cm]{Admin_Subsystem_Use_Case.jpg}
+\subsubsection{Login}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to initiate administrator login via the back-end service.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The user is registered as an administrator on the system
+			\item The administrator doesn’t have a valid login token
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system
+			\item The administrator has a valid login token
+		\end{enumerate}
+\end{itemize}
+\subsubsection{View profile}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to view the profile of the administrator that is currently logged in.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The administrator’s profile page will be displayed
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Update  profile}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to view and update the profile of the administrator that is currently logged in.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The administrator’s profile details will be updated with valid information in the database
+			\item The administrator’s profile page will be displayed with the updated information
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Logout}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to log an administrator out of the system.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The administrator will be logged out of the system
+		\end{enumerate}
+\end{itemize}
+
+\subsection{Product Subsystem}
+This module is responsible for handling all the functions that could be applied to the product catalogue.
+\includegraphics[width=12cm]{Product_Subsystem_Use_Case.jpg}
+\includegraphics[width=12cm]{Product_Subsystem_Use_Case_2.jpg}
+\subsubsection{Create item}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to create a product item.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The non-duplicate product is created in the database with valid details
+		\end{enumerate}
+\end{itemize}
+\subsubsection{View item}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to display a product’s details.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system/the user is exploring the system anonymously
+			\item The product exists in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The details of the product are displayed
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Update item}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to update the details of a product.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system
+			\item The product exists in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The non-duplicate product’s details will be updated with valid information in the database
+			\item The product’s details will be displayed with the updated information
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Delete item}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to remove a specific product from the system.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system
+			\item The product exists in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The product is removed from the system and the database
+			\item The products page is displayed with the products that are currently in the system
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Create special}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to create a product special. This use case handles both group and singular specials. Group specials 			according to tags will initiate this use case for every product that has the specified tag.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system
+			\item The product/tag exists in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The special is created in the database with valid details
+			\item The price of the product/s reflects the special’s discount
+		\end{enumerate}
+\end{itemize}
+\subsubsection{View special}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to display a special’s details.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system/the user is exploring the system anonymously
+			\item The special exists in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The special’s details are displayed
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Update special}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to update the details of a special.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system
+			\item The special exists in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The special’s details will be updated with valid information in the database
+			\item The special’s details will be displayed with the updated information
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Delete special}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to remove a specific special from the system. This use case can either be initiated by the 				administrator or by time. If the end date of a special has passed, then the special must be deleted automatically.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item The administrator is logged into the system/the end date of the special has passed
+			\item The special exists in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The special is removed from the system and the database
+			\item If deleted by admin: The specials page is displayed with the products that are currently in the system
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Search items}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to apply either a fuzzy or exact search to the product’s catalogue and display the products retrieved.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item Products exist in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The results retrieved by the search are displayed
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Browse items}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to display all the products that are available on the system. It also provides the functionality to sort 			the products by price or name in ascending or descending order.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item Products exist in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The products are displayed according to product selection and sorting preference selection
+		\end{enumerate}
+\end{itemize}
+\subsubsection{Filter items}
+\begin{itemize}
+	\item \textbf {Description:}\\
+	This use case will be used by the REST web client to filter the product results displayed to the user. The results can either be filtered by price range or 		by category.
+	\item \textbf {Preconditions:}
+		\begin{enumerate}
+			\item Products exist in the database
+		\end{enumerate}
+	\item \textbf {Post conditions:}
+		\begin{enumerate}
+			\item The products are displayed according to the filter applied
+		\end{enumerate}
+\end{itemize}
+\section{System Services}
+\subsection{Search Service}
+\subsection{Pricing Service}
+\subsection{Authentication Service}
+\subsection{Product Service}
+
 
 
 \newpage
