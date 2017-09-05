@@ -28,7 +28,8 @@
 
 \frenchspacing
 
-\title{\includegraphics[width=12cm]{Eeufeeslogo.jpg} \\       
+\title{\includegraphics[width=12cm]{Eeufeeslogo.jpg} \\      
+	\vspace{3.0cm} 
       \bfseries Bellisimo \\
        \vspace{1.0cm}
        Software Requirements Specification \\ 
@@ -91,7 +92,7 @@ The web application will consist of two subsystems that communicate via HTTP usi
 \subsubsection{Micro-services Architecture}
 The micro services implementation will consist on n spring boot applications where n = no. of modules or components in the system. These applications will be integrated by using spring cloud and Netflix OSS Zuul Integration. The integration server will be regarded as one component of the n components to be implemented.
 \begin{figure}[H]
-	\includegraphics[scale=0.5]{component_diagram}
+	\includegraphics[scale=0.25]{component_diagram}
 	\caption{System components diagram}
 \end{figure}
 
@@ -292,8 +293,10 @@ This module is responsible for handling all the functions that could be performe
 
 \subsection{Product Subsystem}
 This module is responsible for handling all the functions that could be applied to the product catalogue.
-\includegraphics[width=12cm]{Product_Subsystem_Use_Case.jpg}
-\includegraphics[width=12cm]{Product_Subsystem_Use_Case_2.jpg}
+\includegraphics[scale=0.3]{Product_Subsystem_Use_Case.jpg}
+\newpage
+\clearpage
+\includegraphics[scale=0.3]{Product_Subsystem_Use_Case_2.jpg}
 \subsubsection{Create item}
 \begin{itemize}
 	\item \textbf {Description:}\\
@@ -454,13 +457,27 @@ This module is responsible for handling all the functions that could be applied 
 \subsection{Pricing Service}
 \subsection{Authentication Service}
 \subsection{Product Service}
-
+\newpage
+\clearpage
 \subsection{System Use Case Diagram}
 \includegraphics[width=12cm]{System_Use_Case_Diagram.jpg}
 \subsection{System Sequence Diagram}
-\includegraphics[width=12cm]{System_Sequence_Diagram.png}
+\includegraphics[width=12cm]{System_Sequence_Diagram_1.png}
+\newpage
+\includegraphics[width=12cm]{System_Sequence_Diagram_2.png}
 \subsection{Domain Model}
 \includegraphics[width=12cm]{Domain_Model.jpg}
+\begin{enumerate}
+	\item \textbf{Admin}\\
+	The Admin table is responsible for storing the credentials of system administrators. In order to be added as a system administrator, you have to be added to the database by Bellisimo's owner.
+	\item \textbf{Product}\\
+	\item \textbf{Tag}\\
+	\item \textbf{Category}\\
+	The Catgeory table is responsible for storing the hierarchy of categories offered by Bellisimo. The categoryID is unique to a category. The tagID identifies a tag node, which the hierarchy consists of. The parentTagID holds the value of the tag node's parent. Meaning, if the parentTagID is null, then it is the root of the hierarchy. For example, given that a shirt falls under Clothes > Women > Blouses, with the Blouse tag being retrievable from the Product's tag field, the hierarchy of tags can be built from retrieving Blouse's parent until its parent is null and we have reached the parent.
+	\item \textbf{Special}\\
+	\item \textbf{ProductTag}\\
+	\item \textbf{ProductSpecial}\\
+\end{enumerate}
 
 
 \newpage
