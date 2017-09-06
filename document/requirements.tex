@@ -454,11 +454,12 @@ This module is responsible for handling all the functions that could be applied 
 \end{itemize}
 \section{System Services}
 \subsection{Search Service}
-\subsection{Pricing Service}
+This service will be responsible for the search functionality. It will use an ElasticSearch database as it is known for quick search capabilities and provides the ability for data analysis, which could be of benefit to the business.
 \subsection{Authentication Service}
+This service will be responsible for handling administrator authentication. This includes hiding privileges from anonymous users.
 \subsection{Product Service}
-\newpage
-\clearpage
+This service will be responsible for the all product requests. Such as viewing, creating, updating and deleting products and viewing, creating, updating and deleting specials. It will also handle the filtering by price range and category and the sorting by price and name.
+\section{System Models}
 \subsection{System Use Case Diagram}
 \includegraphics[width=12cm]{System_Use_Case_Diagram.jpg}
 \subsection{System Sequence Diagram}
@@ -471,12 +472,17 @@ This module is responsible for handling all the functions that could be applied 
 	\item \textbf{Admin}\\
 	The Admin table is responsible for storing the credentials of system administrators. In order to be added as a system administrator, you have to be added to the database by Bellisimo's owner.
 	\item \textbf{Product}\\
+	The Product table is responsible for storing all the product details.
 	\item \textbf{Tag}\\
+	The Tag table is responsible for storing the various tags that exist for classifying products, for example, Food.
 	\item \textbf{Category}\\
 	The Catgeory table is responsible for storing the hierarchy of categories offered by Bellisimo. The categoryID is unique to a category. The tagID identifies a tag node, which the hierarchy consists of. The parentTagID holds the value of the tag node's parent. Meaning, if the parentTagID is null, then it is the root of the hierarchy. For example, given that a shirt falls under Clothes > Women > Blouses, with the Blouse tag being retrievable from the Product's tag field, the hierarchy of tags can be built from retrieving Blouse's parent until its parent is null and we have reached the parent.
 	\item \textbf{Special}\\
+	In the Special table, only one of either productID or tagID will be filled in as it can be either a singular or a group special.
 	\item \textbf{ProductTag}\\
+	The ProductTag table is responsible for storing singular product tags. For example, a specific dress would belong under Woman > Dresses so the ID for the Dresses tag would be stored for that dress so that the hierarchy of categories can be built from the product upward, in case it is needed during implementation.
 	\item \textbf{ProductSpecial}\\
+	The ProductSpecial table will hold singular specials for products, if a special is applied to a tag, an entry will be created for every product that falls within that tag in the product special table.
 \end{enumerate}
 
 
