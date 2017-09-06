@@ -1,0 +1,15 @@
+# IntelliJ Generated
+.idea
+*.iml
+
+# Client Generated
+client/node_modules/
+client/tools/
+client/dist/
+
+# Server Generated
+server/target/
+server/out/
+
+# Gradle Generated
+.gradle/

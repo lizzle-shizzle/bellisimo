@@ -1,0 +1,22 @@
+<p-growl [value]="messages" sticky="sticky"></p-growl>
+<img src="./assets/Bellisimo_Logo.png" alt="Bellisimo" id="Bellisimo_logo">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+            <h1 class="text-center login-title">Login</h1>
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+                <form class="form-signin" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                <input id="email" type="email"
+               [(ngModel)]="model.email" #firstname="ngModel" name="email" class="form-control"
+               pInputText required autofocus placeholder="Email">
+                <input  id="password" type="password"
+               [(ngModel)]="model.password" #password="ngModel" name="password"
+               class="form-control" pInputText required placeholder="Password">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><span class="clearfix"></span>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

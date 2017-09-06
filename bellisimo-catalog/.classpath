@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="com/bellisimo/controller/" kind="src" path="server/src/main/java"/>
+	<classpathentry kind="src" path="server/src/main/java/com/bellisimo/controller"/>
+	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="server/target/libs/spring-angular2-auth-example-1.0.0.jar"/>
+	<classpathentry kind="output" path="server/target/classes/java/main"/>
+</classpath>

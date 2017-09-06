@@ -1,0 +1,13 @@
+allprojects {
+    group 'com.bellisimo'
+    version '1.0-SNAPSHOT'
+}
+
+task cleanRoot(
+        group: 'Build Root',
+        dependsOn: [':client:clean', ':server:clean'],
+        description: 'Clean root project') {}
+task buildRoot(
+        group: 'Build Root',
+        dependsOn: [':client:build', ':server:build'],
+        description: 'Build root project') {}
